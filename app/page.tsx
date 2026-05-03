@@ -1,65 +1,124 @@
-import Image from "next/image";
+"use client";
+
+import React from "react";
+import Hero from "@/components/Hero";
+import ProjectCard from "@/components/ProjectCard";
+import Experience from "@/components/Experience";
+import Certifications from "@/components/Certifications";
+import HabilidadesTecnicas from "@/components/HabilidadesTecnicas";
+
+interface Project {
+  title: string;
+  description: string;
+  stack: string[];
+  imageUrl: string;
+  achievement?: string;
+  links: {
+    label: string;
+    url: string;
+    icon: "appstore" | "playstore" | "web" | "github";
+  }[];
+}
+
+const projects: Project[] = [
+  {
+    title: "El Good Trip (App Mobile)",
+    description:
+      "Liderazgo de arquitectura en una aplicación móvil de alto rendimiento. Enfoque en escalabilidad y rendimiento.",
+    stack: ["React Native", "Expo Go", "TypeScript"],
+    imageUrl: "/app1.png",
+    links: [
+      {
+        label: "App Store",
+        url: "https://apps.apple.com/us/app/el-good-trip/id6759070036",
+        icon: "appstore",
+      },
+      {
+        label: "Play Store",
+        url: "https://play.google.com/store/apps/details?id=com.elgoodtrip.app&pcampaignid=web_share",
+        icon: "playstore",
+      },
+    ],
+  },
+  {
+    title: "El Good Trip (Web Platform)",
+    description:
+      "Plataforma de reservas completa con Dashboard administrativo, gestión de inventario y análisis de datos.",
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    imageUrl: "/web1.png",
+    achievement:
+      "Mejora de UX que incrementó las ventas de 1 boleto cada 3 días a 3 boletos diarios.",
+    links: [
+      { label: "Visitar Web", url: "https://elgoodtrip.com", icon: "web" },
+      {
+        label: "GitHub",
+        url: "https://github.com/marianelamarquez",
+        icon: "github",
+      },
+    ],
+  },
+  {
+    title: "Sistema de Gestión Médica",
+    description:
+      "Tesis de grado. Automatización integral de procesos administrativos y clínicos para centros de salud.",
+    stack: ["Python", "Django", "PostgreSQL", "JavaScript"],
+    imageUrl: "/cemar.png",
+    achievement: "Automatización del 100% de los procesos administrativos.",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/marianelamarquez",
+        icon: "github",
+      },
+    ],
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen selection:bg-primary/30">
+      {/* Hero Section */}
+      <Hero />
+
+      {/* Projects Section */}
+      <section id="projects" className="py-14">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                Proyectos Destacados
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Una selección de trabajos donde la arquitectura técnica se une
+                con una experiencia de usuario optimizada.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <Experience />
+
+      {/* Habilities Section */}
+      <HabilidadesTecnicas />
+      {/* Certifications Section */}
+      <Certifications />
+
+      {/* Footer */}
+      <footer className="py-10 border-t border-zinc-100 dark:border-zinc-800">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-zinc-500 text-sm">
+            © {new Date().getFullYear()} Marianela Márquez
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }
