@@ -3,25 +3,29 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const skills = [
-  "TypeScript",
-  "JavaScript",
-  "Python",
-  "C++",
-  "React Native",
-  "Next.js",
-  "React",
-  "Node.js",
-  "Django",
-  "MUI"
-];
-
-const languages = [
-  "Español (Nativo)",
-  "Inglés (B2 - Upper Intermediate)"
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const HabilidadesTecnicas = () => {
+  const { t } = useLanguage();
+
+  const skills = [
+    "TypeScript",
+    "JavaScript",
+    "Python",
+    "C++",
+    "React Native",
+    "Next.js",
+    "React",
+    "Node.js",
+    "Django",
+    "MUI"
+  ];
+
+  const languages = [
+    t.skills.spanish,
+    t.skills.english
+  ];
+
   return (
     <section className="py-10 bg-zinc-50 dark:bg-zinc-900/50">
       <div className="container mx-auto px-6">
@@ -33,12 +37,12 @@ const HabilidadesTecnicas = () => {
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-12">
-            Habilidades Técnicas
+            {t.skills.title}
           </h2>
 
           <div className="mb-12">
             <h3 className="text-xl font-semibold mb-6 text-zinc-600 dark:text-zinc-400">
-              Lenguajes y Frameworks
+              {t.skills.languages}
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
               {skills.map((skill, index) => (
@@ -59,7 +63,7 @@ const HabilidadesTecnicas = () => {
 
           <div>
             <h3 className="text-xl font-semibold mb-6 text-zinc-600 dark:text-zinc-400">
-              Idiomas
+              {t.skills.idioms}
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
               {languages.map((language, index) => (

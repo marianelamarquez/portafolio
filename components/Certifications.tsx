@@ -26,13 +26,17 @@ const certificates: Certificate[] = [
   { title: 'Bootcamp Bases de Datos Azure', issuer: 'Código Facilito' },
 ];
 
+import { useLanguage } from "@/context/LanguageContext";
+
 const Certifications = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-10 bg-zinc-50 dark:bg-zinc-900/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Educación y Certificaciones</h2>
-          <p className="text-muted-foreground">Formación continua y especializaciones técnicas.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.education.title}</h2>
+          <p className="text-muted-foreground">{t.education.subtitle}</p>
         </div>
 
         <motion.div 
@@ -45,10 +49,10 @@ const Certifications = () => {
             <GraduationCap className="w-8 h-8" />
           </div>
           <div>
-            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2 text-justify md:text-left">Ingeniería de Sistemas</h3>
-            <p className="text-lg text-zinc-700 dark:text-zinc-300 text-justify md:text-left">Universidad De Oriente (UDO) Anzoátegui, Venezuela</p>
-            <span className="inline-block mt-3 text-sm font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">
-              Graduada en Octubre 2024
+            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2 text-justify md:text-left">{t.education.degree}</h3>
+            <p className="text-lg text-zinc-700 dark:text-zinc-300 text-justify md:text-left">{t.education.university}</p>
+            <span className="inline-block mt-3 text-sm font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full text-center">
+              {t.education.graduated}
             </span>
           </div>
         </motion.div>
@@ -73,7 +77,7 @@ const Certifications = () => {
               <p className="text-sm text-muted-foreground mb-4">{cert.issuer}</p>
               
               <div className="mt-auto flex items-center justify-between text-xs font-semibold text-zinc-400 group-hover:text-primary transition-colors">
-                <span>{cert.pdfUrl ? 'Ver Comprobante' : 'Pendiente por subir'}</span>
+                <span>{cert.pdfUrl ? t.education.view_cert : t.education.pending}</span>
                 {cert.pdfUrl && <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />}
               </div>
             </motion.a>

@@ -16,7 +16,11 @@ const LinkedinIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+import { useLanguage } from "@/context/LanguageContext";
+
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center pt-6 overflow-hidden">
       {/* Decorative Background Elements */}
@@ -33,7 +37,7 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="inline-block px-4 py-1.5 mb-6 bg-white/50 backdrop-blur-md border border-white rounded-full shadow-sm"
         >
-          <span className="text-sm font-semibold text-primary">Disponible para nuevos proyectos</span>
+          <span className="text-sm font-semibold text-primary">{t.hero.badge}</span>
         </motion.div>
 
         <motion.h1
@@ -42,7 +46,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
         >
-          Marianela Márquez
+          {t.hero.title}
         </motion.h1>
 
         <motion.p
@@ -51,7 +55,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-xl md:text-2xl text-muted-foreground font-medium mb-4"
         >
-          Systems Engineer | <span className="text-primary">Frontend & Mobile Developer</span>
+          {t.hero.subtitle}<span className="text-primary">{t.hero.role}</span>
         </motion.p>
 
         <motion.p
@@ -60,7 +64,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="max-w-6xl mx-auto text-lg text-zinc-600 dark:text-zinc-400 mb-10 leading-relaxed text-justify"
         >
-          Ingeniera de Sistemas con experiencia en desarrollo Web y QA. Especialista en la optimización de productos digitales mediante la implementación de validaciones críticas de seguridad, integración de APIs y mejora de UX, logrando incrementos medibles en la conversión de ventas y eficiencia operativa. Soy una persona proactiva y entusiasta por construir aplicaciones web utilizando tecnologías actualizadas, que no le teme a los desafíos y no se rinde fácilmente. Mi objetivo es siempre mejorar mis habilidades a través de la experiencia, así que nunca dejo de aprender.
+          {t.hero.description}
         </motion.p>
 
         <motion.div
@@ -71,11 +75,11 @@ const Hero = () => {
         >
           <Button variant="primary" size="lg" className="gap-2">
             <FileDown className="w-5 h-5" />
-            Descargar CV
+            {t.hero.cv_button}
           </Button>
           <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('https://wa.me/584248914101', '_blank')}>
             <MessageCircle className="w-5 h-5" />
-            WhatsApp
+            {t.hero.wa_button}
           </Button>
           <Button variant="primary" size="lg" className="gap-2" onClick={() => window.open('https://www.linkedin.com/in/marianela-marquez-623ba52a7/', '_blank')}>
             <LinkedinIcon className="w-5 h-5" />
