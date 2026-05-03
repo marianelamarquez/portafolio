@@ -32,7 +32,7 @@ const Experience = () => {
                   <p className="text-lg font-medium text-zinc-700 dark:text-zinc-300 mb-2">
                     Back 9
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-justify">
                     Lideré la arquitectura de la aplicación iOS/Android en React
                     Native y Expo Go, asegurando la sincronización en tiempo
                     real con el motor de reservas. Rediseñé la UX de El
@@ -61,7 +61,7 @@ const Experience = () => {
                   <p className="text-lg font-medium text-zinc-700 dark:text-zinc-300 mb-2">
                     Organytech Systems, C.A
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-justify">
                     Aseguré la máxima calidad del software identificando y
                     documentando de manera proactiva más de 50 defectos y
                     errores críticos en el sistema mediante la gestión de

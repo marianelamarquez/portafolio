@@ -9,6 +9,7 @@ import HabilidadesTecnicas from "@/components/HabilidadesTecnicas";
 
 interface Project {
   title: string;
+  role: string;
   description: string;
   stack: string[];
   imageUrl: string;
@@ -23,8 +24,9 @@ interface Project {
 const projects: Project[] = [
   {
     title: "El Good Trip (App Mobile)",
+    role: "Mobile Lead & Solo Developer",
     description:
-      "Liderazgo de arquitectura en una aplicación móvil de alto rendimiento. Enfoque en escalabilidad y rendimiento.",
+      "Lideré el desarrollo integral de la aplicación móvil, asumiendo la responsabilidad total desde la arquitectura técnica y el diseño de la interfaz hasta la programación de funcionalidades críticas y el despliegue en tiendas oficiales.",
     stack: ["React Native", "Expo Go", "TypeScript"],
     imageUrl: "/app1.png",
     links: [
@@ -42,25 +44,22 @@ const projects: Project[] = [
   },
   {
     title: "El Good Trip (Web Platform)",
+    role: "Frontend & QA",
     description:
-      "Plataforma de reservas completa con Dashboard administrativo, gestión de inventario y análisis de datos.",
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "Especializada en el desarrollo Frontend y aseguramiento de calidad (QA). Diseñé una plataforma intuitiva y escalable, implementando pruebas rigurosas para garantizar una experiencia de usuario fluida y libre de errores en entornos de producción.",
+    stack: ["Next.js", "React", "TypeScript", "Material UI"],
     imageUrl: "/web1.png",
     achievement:
       "Mejora de UX que incrementó las ventas de 1 boleto cada 3 días a 3 boletos diarios.",
     links: [
       { label: "Visitar Web", url: "https://elgoodtrip.com", icon: "web" },
-      {
-        label: "GitHub",
-        url: "https://github.com/marianelamarquez",
-        icon: "github",
-      },
     ],
   },
   {
     title: "Sistema de Gestión Médica",
+    role: "Full stack",
     description:
-      "Tesis de grado. Automatización integral de procesos administrativos y clínicos para centros de salud.",
+      "Desarrollo Full Stack integral realizado como tesis de grado. Construí la arquitectura completa, desde la lógica del servidor y bases de datos hasta la interfaz de usuario, automatizando los procesos de gestión de citas y operaciones clínicas.",
     stack: ["Python", "Django", "PostgreSQL", "JavaScript"],
     imageUrl: "/cemar.png",
     achievement: "Automatización del 100% de los procesos administrativos.",
@@ -88,7 +87,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 Proyectos Destacados
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-muted-foreground text-justify">
                 Una selección de trabajos donde la arquitectura técnica se une
                 con una experiencia de usuario optimizada.
               </p>

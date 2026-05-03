@@ -113,3 +113,10 @@
   background: linear-gradient(135deg, #1a1a1a 0%, #0f172a 100%);
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -58,10 +58,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-2xl mx-auto text-lg text-zinc-600 dark:text-zinc-400 mb-10 leading-relaxed"
+          className="max-w-6xl mx-auto text-lg text-zinc-600 dark:text-zinc-400 mb-10 leading-relaxed text-justify"
         >
-          Apasionada por la optimización de productos y la creación de experiencias de usuario excepcionales. 
-          Especializada en transformar ideas en interfaces fluidas y escalables.
+          Ingeniera de Sistemas con experiencia en desarrollo Web y QA. Especialista en la optimización de productos digitales mediante la implementación de validaciones críticas de seguridad, integración de APIs y mejora de UX, logrando incrementos medibles en la conversión de ventas y eficiencia operativa. Soy una persona proactiva y entusiasta por construir aplicaciones web utilizando tecnologías actualizadas, que no le teme a los desafíos y no se rinde fácilmente. Mi objetivo es siempre mejorar mis habilidades a través de la experiencia, así que nunca dejo de aprender.
         </motion.p>
 
         <motion.div
