@@ -6,7 +6,7 @@ export const es: Translations = {
     title: "Marianela Márquez",
     subtitle: "Ingeniería de Sistemas | ",
     role: "Desarrolladora Frontend & Mobile",
-    description: "Ingeniera de Sistemas con experiencia en desarrollo Web y QA. Especialista en la optimización de productos digitales mediante la implementación de validaciones críticas de seguridad, integración de APIs y mejora de UX, logrando incrementos medibles en la conversión de ventas y eficiencia operativa. Soy una persona proactiva y entusiasta por construir aplicaciones web utilizando tecnologías actualizadas, que no le teme a los desafíos y no se rinde fácilmente. Mi objetivo es siempre mejorar mis habilidades a través de la experiencia, así que nunca dejo de aprender.",
+    description: "Ingeniera de Sistemas con experiencia en desarrollo Web y QA. Soy una persona proactiva y entusiasta por construir aplicaciones web utilizando tecnologías actualizadas, que no le teme a los desafíos y no se rinde fácilmente. Mi objetivo es siempre mejorar mis habilidades a través de la experiencia, así que nunca dejo de aprender.",
     cv_button: "Descargar CV",
     wa_button: "WhatsApp",
   },
@@ -50,7 +50,7 @@ export const es: Translations = {
     },
     web_platform: {
       role: "Frontend & QA",
-      description: "Especializada en el desarrollo Frontend y aseguramiento de calidad (QA). Diseñé una plataforma intuitiva y escalable, implementando pruebas rigurosas para garantizar una experiencia de usuario fluida y libre de errores en entornos de producción."
+      description: "Responsable del mantenimiento evolutivo del frontend, implementando nuevas funcionalidades y optimizando la interfaz. Especializada en asegurar la calidad mediante pruebas QA y mejora continua del código."
     },
     medical_system: {
       role: "Full stack",

@@ -4,7 +4,7 @@ export const en = {
     title: "Marianela Márquez",
     subtitle: "Systems Engineer | ",
     role: "Frontend & Mobile Developer",
-    description: "Systems Engineer with experience in Web development and QA. Specialist in optimizing digital products through the implementation of critical security validations, API integration, and UX improvement, achieving measurable increases in sales conversion and operational efficiency. I am a proactive and enthusiastic person about building web applications using updated technologies, who is not afraid of challenges and does not give up easily. My goal is always to improve my skills through experience, so I never stop learning.",
+    description: "Systems Engineer with experience in Web development and QA. I am a proactive and enthusiastic person about building web applications using updated technologies, who is not afraid of challenges and does not give up easily. My goal is always to improve my skills through experience, so I never stop learning.",
     cv_button: "Download CV",
     wa_button: "WhatsApp",
   },
@@ -48,7 +48,7 @@ export const en = {
     },
     web_platform: {
       role: "Frontend & QA",
-      description: "Specialized in Frontend development and Quality Assurance (QA). I designed an intuitive and scalable platform, implementing rigorous testing to ensure a smooth and error-free user experience in production environments."
+      description: "Responsible for the evolutionary maintenance of the frontend, implementing new features and optimizing the user interface. Specialized in quality assurance through QA testing and continuous code improvement."
     },
     medical_system: {
       role: "Full stack",
