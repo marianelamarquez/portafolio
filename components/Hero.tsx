@@ -37,7 +37,7 @@ const Hero = () => {
 
   return (
 
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-6 overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-6 z-10">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-pink-100/50 rounded-full blur-[100px]" />
