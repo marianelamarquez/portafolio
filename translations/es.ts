@@ -8,6 +8,9 @@ export const es: Translations = {
     role: "Desarrolladora Frontend & Mobile",
     description: "Ingeniera de Sistemas con experiencia en desarrollo Web y QA. Soy una persona proactiva y entusiasta por construir aplicaciones web utilizando tecnologías actualizadas, que no le teme a los desafíos y no se rinde fácilmente. Mi objetivo es siempre mejorar mis habilidades a través de la experiencia, así que nunca dejo de aprender.",
     cv_button: "Descargar CV",
+    cv_download_prompt: "Elige el idioma:",
+    cv_spanish: "🇻🇪 Español",
+    cv_english: "🇺🇸 Inglés",
     wa_button: "WhatsApp",
   },
   experience: {

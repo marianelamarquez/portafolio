@@ -1,6 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
-import { MessageCircle, FileDown } from 'lucide-react';
+import { MessageCircle, FileDown, ChevronDown } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -20,8 +22,21 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const Hero = () => {
   const { t } = useLanguage();
+  const [cvMenuOpen, setCvMenuOpen] = useState(false);
+  const cvRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (cvRef.current && !cvRef.current.contains(e.target as Node)) {
+        setCvMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
+
     <section className="relative min-h-[90vh] flex items-center justify-center pt-6 overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden">
@@ -73,10 +88,62 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="flex flex-wrap justify-center gap-4"
         >
-          <Button variant="primary" size="lg" className="gap-2">
-            <FileDown className="w-5 h-5" />
-            {t.hero.cv_button}
-          </Button>
+          {/* CV Download Dropdown */}
+          <div ref={cvRef} className="relative">
+            <Button
+              variant="primary"
+              size="lg"
+              className="gap-2"
+              onClick={() => setCvMenuOpen((prev) => !prev)}
+            >
+              <FileDown className="w-5 h-5" />
+              {t.hero.cv_button}
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${cvMenuOpen ? 'rotate-180' : ''}`}
+              />
+            </Button>
+
+            <AnimatePresence>
+              {cvMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -8, scale: 0.96 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute top-full mt-2 left-1/2 -translate-x-1/2 z-50 min-w-[200px] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-2xl shadow-xl overflow-hidden"
+                >
+                  <p className="text-[11px] font-semibold text-zinc-400 uppercase tracking-widest px-4 pt-3 pb-1">
+                    {t.hero.cv_download_prompt}
+                  </p>
+
+                  {/* Spanish CV - available */}
+                  <a
+                    href="/2026 Currículum Marianela Marquez.pdf"
+                    download="CV_Marianela_Marquez_ES.pdf"
+                    onClick={() => setCvMenuOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors cursor-pointer"
+                  >
+                    <FileDown className="w-4 h-4 shrink-0" />
+                    {t.hero.cv_spanish}
+                  </a>
+
+                  {/* English CV - placeholder (replace href when ready) */}
+                  <button
+                    disabled
+                    title="Coming soon"
+                    className="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-zinc-400 dark:text-zinc-600 cursor-not-allowed opacity-60 mb-1"
+                  >
+                    <FileDown className="w-4 h-4 shrink-0" />
+                    {t.hero.cv_english}
+                    <span className="ml-auto text-[10px] bg-zinc-100 dark:bg-zinc-800 text-zinc-500 px-2 py-0.5 rounded-full">
+                      Soon
+                    </span>
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('https://wa.me/584248914101', '_blank')}>
             <MessageCircle className="w-5 h-5" />
             {t.hero.wa_button}

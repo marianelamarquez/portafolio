@@ -6,6 +6,9 @@ export const en = {
     role: "Frontend & Mobile Developer",
     description: "Systems Engineer with experience in Web development and QA. I am a proactive and enthusiastic person about building web applications using updated technologies, who is not afraid of challenges and does not give up easily. My goal is always to improve my skills through experience, so I never stop learning.",
     cv_button: "Download CV",
+    cv_download_prompt: "Choose language:",
+    cv_spanish: "🇻🇪 Spanish",
+    cv_english: "🇺🇸 English",
     wa_button: "WhatsApp",
   },
   experience: {

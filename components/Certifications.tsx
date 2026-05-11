@@ -14,15 +14,15 @@ interface Certificate {
 const certificates: Certificate[] = [
   { title: 'Frontend Developer', issuer: 'Platzi', pdfUrl: '/certifications/diploma-frontend-developer.pdf' },
   { title: 'Básico de JavaScript', issuer: 'Platzi', pdfUrl: '/certifications/diploma-basico-javascript.pdf' },
-  { title: 'Comunicación Asertiva', issuer: 'Platzi', pdfUrl: '/certifications/diploma-comunicacion-asertiva-2021.pdf' },
-  { title: 'Profesional de TypeScript', issuer: 'Código Facilito', pdfUrl: '/certifications/Curso Profesional de typescript.pdf' },
   { title: 'Profesional de JavaScript', issuer: 'Código Facilito', pdfUrl: '/certifications/Certificado - Curso profesional de JavaScript.pdf' },
-  { title: 'GitHub', issuer: 'Código Facilito', pdfUrl: '/certifications/Certificado - Curso a fondo de GitHub.pdf' },
+  { title: 'Profesional de TypeScript', issuer: 'Código Facilito', pdfUrl: '/certifications/Curso Profesional de typescript.pdf' },
   { title: 'Herramientas Frontend', issuer: 'Código Facilito', pdfUrl: '/certifications/Certificado - Curso de Herramientas y conceptos Frontend.pdf' },
   { title: 'CSS', issuer: 'Código Facilito', pdfUrl: '/certifications/Certificado - Curso de CSS.pdf' },
   { title: 'Python Profesional', issuer: 'Código Facilito', pdfUrl: '/certifications/Certificado - Curso de Python Profesional.pdf' },
-  { title: 'Power BI', issuer: 'Código Facilito', pdfUrl: '/certifications/Curso de Power BI.pdf' },
   { title: 'Vue 3', issuer: 'Código Facilito', pdfUrl: '/certifications/Certificado - Curso Profesional de Vue 3.pdf' },
+  { title: 'Power BI', issuer: 'Código Facilito', pdfUrl: '/certifications/Curso de Power BI.pdf' },
+  { title: 'GitHub', issuer: 'Código Facilito', pdfUrl: '/certifications/Certificado - Curso a fondo de GitHub.pdf' },
+  { title: 'Comunicación Asertiva', issuer: 'Platzi', pdfUrl: '/certifications/diploma-comunicacion-asertiva-2021.pdf' },
   { title: 'Bootcamp Bases de Datos Azure', issuer: 'Código Facilito', pdfUrl: '/certifications/Certificado - Bootcamp de Bases de Datos en la nube con Azure.pdf' },
 ];
 

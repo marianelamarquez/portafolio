@@ -77,7 +77,7 @@ const ProjectCard = ({
           {role}
         </p>
         <div className="flex flex-wrap gap-2">
-          {stack.slice(0, 3).map((item) => (
+          {stack.map((item) => (
             <span
               key={item}
               className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs text-white"
