@@ -18,6 +18,7 @@ const HabilidadesTecnicas = () => {
     "React",
     "Node.js",
     "Django",
+    "PHP",
     "MUI"
   ];
 

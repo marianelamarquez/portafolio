@@ -8,7 +8,7 @@ const LanguageToggle = () => {
   const { locale, setLocale } = useLanguage();
 
   return (
-    <div className="fixed top-6 right-24 z-50">
+    <div className="fixed top-6 right-6 md:right-24 z-50">
       <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md p-1 rounded-full border border-zinc-200 dark:border-zinc-800 shadow-lg flex items-center">
         <button
           onClick={() => setLocale("en")}

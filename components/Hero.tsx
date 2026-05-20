@@ -116,9 +116,9 @@ const Hero = () => {
                     {t.hero.cv_download_prompt}
                   </p>
 
-                  {/* Spanish CV - available */}
+                  {/* Spanish CV  */}
                   <a
-                    href="/2026 Currículum Marianela Marquez.pdf"
+                    href="/Curriculum mayo 2026 esp.pdf"
                     download="CV_Marianela_Marquez_ES.pdf"
                     onClick={() => setCvMenuOpen(false)}
                     className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors cursor-pointer"
@@ -127,18 +127,18 @@ const Hero = () => {
                     {t.hero.cv_spanish}
                   </a>
 
-                  {/* English CV - placeholder (replace href when ready) */}
-                  <button
-                    disabled
-                    title="Coming soon"
-                    className="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-zinc-400 dark:text-zinc-600 cursor-not-allowed opacity-60 mb-1"
+                  {/* English CV */}
+                  <a
+                    href="/Curriculum mayo 2026 ing.pdf"
+                    download="CV_Marianela_Marquez_EN.pdf"
+                    onClick={() => setCvMenuOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors cursor-pointer"
                   >
                     <FileDown className="w-4 h-4 shrink-0" />
                     {t.hero.cv_english}
-                    <span className="ml-auto text-[10px] bg-zinc-100 dark:bg-zinc-800 text-zinc-500 px-2 py-0.5 rounded-full">
-                      Soon
-                    </span>
-                  </button>
+                  </a>
+
+
                 </motion.div>
               )}
             </AnimatePresence>
